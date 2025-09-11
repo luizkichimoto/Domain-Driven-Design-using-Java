@@ -1,14 +1,13 @@
 import java.time.LocalDate;
 
-public class Jogo{
-    String título;
+public class Jogo extends Conteudo {
+    //Atributos/Propriedades/Campos
     String plataforma;
-    LocalDate dataLancamento;
 
     @Override
     public String toString() {
         return "Jogo{" +
-                "título='" + título + '\'' +
+                "titulo='" + titulo + '\'' +
                 ", plataforma='" + plataforma + '\'' +
                 ", dataLancamento=" + dataLancamento +
                 '}';
