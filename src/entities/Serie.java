@@ -1,6 +1,5 @@
-import java.time.LocalDate;
+package entities;
 
 public class Serie extends Conteudo {
     int numTemporadas;
 }
-
