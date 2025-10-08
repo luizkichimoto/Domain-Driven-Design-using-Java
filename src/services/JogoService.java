@@ -25,8 +25,17 @@ public class JogoService {
     public void AdicionarJogo(Scanner scan, ArrayList<Conteudo> catalogo){
         System.out.println("Digite o nome do jogo que deseja cadastrar:");
         var titulo = scan.nextLine();
-        System.out.println("Digite a plataforma do jogo:");
-        var plataforma = scan.nextLine();
+        System.out.println("Digite a plataforma do jogo: :");
+        println("""
+                1 - PC,
+                2 - PLAYSTATION,
+                3 - XBOX,
+                4 - NINTENDO,
+                5 - MOBILE,
+                6 - VR
+                """);
+        var plataforma = scan.nextInt();
+        scan.nextLine();
 
         var dataLancamento = LocalDate.now();
 
@@ -41,7 +50,6 @@ public class JogoService {
 
         var jogo = new Jogo();
         jogo.titulo = titulo;
-        jogo.plataforma = plataforma;
         jogo.dataLancamento = dataLancamento;
 
         catalogo.add(jogo);
@@ -88,10 +96,10 @@ public class JogoService {
         var comentario = scan.nextLine();
 
         var avaliacao = new Avaliacao();
-        avaliacao.nomeUsuario = nome;
-        avaliacao.nota = nota;
-        avaliacao.comentario = comentario;
-        avaliacao.dataLancamento = LocalDate.now();
+        avaliacao.setNomeUsuario(nome);
+        avaliacao.setNota(nota*-1);
+        avaliacao.setComentario(comentario);
+        avaliacao.setDataLancamento(LocalDate.now());
 
         jogo.avaliacoes.add(avaliacao);
         IOUtils.println("Avaliação adicionada com sucesso!");
